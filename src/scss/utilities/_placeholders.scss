@@ -1,0 +1,13 @@
+@use "mixins" as ms;
+
+%main-text {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+%details {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}

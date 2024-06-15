@@ -1,0 +1,15 @@
+.pagination-box {
+  display: flex;
+  gap: 12px;
+  height: 24px;
+
+  * > svg,
+  * > use {
+    pointer-events: none;
+  }
+}
+
+.pagination {
+  display: flex;
+  gap: 12px;
+}

@@ -1,0 +1,15 @@
+@use "../utilities/variables" as var;
+
+$fonts: var.$font-weights;
+
+@each $key, $value in $fonts {
+  @font-face {
+    font-family: var.$main-font;
+    src:
+      url(../fonts/Poppins-v21-latin-#{$value}.woff) format("woff"),
+      url(../fonts/Poppins-v21-latin-#{$value}.woff2) format("woff2");
+    font-weight: $value;
+    font-size: normal;
+    font-display: swap;
+  }
+}

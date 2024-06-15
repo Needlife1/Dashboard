@@ -1,0 +1,33 @@
+@use "../utilities/placeholders";
+@use "../utilities/variables" as var;
+@use "../utilities/functions" as fn;
+@use "../utilities/mixins" as mx;
+
+.sidebar {
+  background-color: fn.get-color(light);
+  box-shadow: 0 10px 60px 0 fn.get-color(box-shadow-secondary);
+  @include mx.mq("lg", "max") {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: fn.get-color(light);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    &.is-open {
+      opacity: 1;
+      pointer-events: initial;
+      visibility: visible;
+    }
+  }
+
+  @include mx.mq("md") {
+    grid-area: sidebar;
+  }
+}

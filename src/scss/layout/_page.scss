@@ -1,0 +1,31 @@
+@use "../utilities/mixins" as mx;
+@use "../utilities/functions" as fn;
+@use "../utilities/placeholders";
+
+.page {
+  min-width: 375px;
+
+  @include mx.mq("lg") {
+    display: grid;
+    grid-template-columns: 306px 1fr;
+    grid-template-rows: 68px 1fr;
+
+    grid-template-areas: "sidebar header" "sidebar main";
+  }
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: fn.get-color("light-primary");
+  &-accent {
+    @extend %main-text;
+    color: fn.get-color("light-secondary");
+    display: block;
+    margin-bottom: 8px;
+
+    @include mx.mq("lg") {
+      margin-bottom: 16px;
+    }
+  }
+}

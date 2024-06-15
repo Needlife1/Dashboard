@@ -1,0 +1,25 @@
+@use "../utilities/placeholders";
+@use "../utilities/functions" as fn;
+@use "../utilities/mixins" as mx;
+
+.user-box {
+  display: flex;
+  gap: 12px;
+  position: absolute;
+  bottom: 86px;
+  @include mx.mq("md", "max") {
+    left: 15px;
+  }
+}
+
+.user-name {
+  @extend %main-text;
+  letter-spacing: 0.01em;
+  color: fn.get-color(dark);
+}
+
+.user-position {
+  @extend %details;
+  letter-spacing: 0.01em;
+  color: fn.get-color(user-text);
+}

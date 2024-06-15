@@ -1,0 +1,16 @@
+@use "../utilities/placeholders";
+@use "../utilities/variables" as var;
+@use "../utilities/functions" as fn;
+@use "../utilities/mixins" as mx;
+
+.main {
+  padding: 0 15px 0 15px;
+  @include mx.mq("md") {
+    padding: 0 60px 0 60px;
+  }
+
+  @include mx.mq("lg") {
+    padding: 0 95px 0 76px;
+    grid-area: main;
+  }
+}

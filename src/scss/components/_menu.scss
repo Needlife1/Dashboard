@@ -1,0 +1,66 @@
+@use "../utilities/placeholders";
+@use "../utilities/variables" as var;
+@use "../utilities/functions" as fn;
+@use "../utilities/mixins" as mx;
+
+.menu {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  @include mx.mq("md") {
+    padding: 0 33px 0 33px;
+  }
+
+  @include mx.mq("lg", "max") {
+    @include mx.ease("fast", transform);
+    max-width: 248px;
+    transform: translateX(-100%);
+
+    .sidebar.is-open & {
+      transform: translateX(0);
+      transition-delay: 300ms;
+    }
+  }
+}
+
+.menu-link {
+  @include mx.ease("fast", color);
+  color: fn.get-color(light-secondary);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-radius: 8px;
+
+  &:hover,
+  &:focus {
+    color: fn.get-color(light);
+    background-color: fn.get-color(accent);
+  }
+
+  &.active {
+    background-color: fn.get-color(accent);
+    color: fn.get-color(light);
+  }
+
+  &.stroke .menu-icon {
+    stroke: fn.get-color(current);
+  }
+
+  & .menu-icon-bottom {
+    stroke: fn.get-color(current);
+  }
+}
+
+.menu-link-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  pointer-events: none;
+}
+
+.menu-icon {
+  fill: fn.get-color(current);
+}

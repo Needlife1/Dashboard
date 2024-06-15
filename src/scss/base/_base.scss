@@ -1,0 +1,25 @@
+@use "../utilities/placeholders";
+@use "../utilities/variables" as var;
+@use "../utilities/functions" as fn;
+@use "../utilities/mixins" as mx;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  @extend %main-text;
+  font-family: var.$main-font, sans-serif;
+  color: fn.get-color(dark);
+  background-color: fn.get-color(light-tertiary);
+}
+
+button {
+  color: fn.get-color("current");
+  cursor: pointer;
+  font-family: inherit;
+}

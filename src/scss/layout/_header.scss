@@ -1,0 +1,19 @@
+@use "../utilities/placeholders";
+@use "../utilities/variables" as var;
+@use "../utilities/functions" as fn;
+@use "../utilities/mixins" as mx;
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: fn.get-color(light-tertiary);
+  grid-area: header;
+
+  justify-content: space-evenly;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @include mx.mq("lg") {
+    padding: 0px 0px 0px 76px;
+    justify-content: flex-start;
+  }
+}

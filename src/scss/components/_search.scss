@@ -1,0 +1,42 @@
+@use "../utilities/placeholders";
+@use "../utilities/variables" as var;
+@use "../utilities/functions" as fn;
+@use "../utilities/mixins" as mx;
+
+.search-field {
+  @include mx.ease("fast", width, color);
+  border-radius: 10px;
+  width: 216px;
+  height: 38px;
+
+  background-color: fn.get-color(bg-search);
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.search-icon {
+  flex-shrink: 0;
+  fill: fn.get-color("current");
+  margin-right: 12px;
+}
+
+.search-input {
+  @extend %details;
+  background-color: fn.get-color(bg-search);
+  min-width: 165px;
+  min-height: 20px;
+  border-radius: 10px;
+  padding: 4px;
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    color: fn.get-color(placeholder);
+  }
+
+  &:focus-within {
+    border: 1px solid fn.get-color(hover);
+  }
+}

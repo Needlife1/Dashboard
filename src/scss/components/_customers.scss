@@ -1,0 +1,205 @@
+@use "../utilities/placeholders";
+@use "../utilities/variables" as var;
+@use "../utilities/functions" as fn;
+@use "../utilities/mixins" as mx;
+
+.customers {
+  grid-area: customers;
+  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  row-gap: 16px;
+  background-color: fn.get-color(light);
+  border-radius: 30px;
+  box-shadow: 0 10px 60px 0 rgba(226, 236, 249, 0.5);
+}
+
+.customers-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 30px 53px 0 38px;
+
+  @include mx.mq("md") {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.customers-title {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 7px;
+
+  &-accent {
+    @extend %details;
+    color: fn.get-color(accent-text);
+    display: block;
+  }
+}
+
+.customers-container {
+  width: 100%;
+  overflow-y: auto;
+}
+
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: hidden;
+  @extend %main-text;
+
+  thead {
+    th {
+      position: relative;
+      padding: 10px;
+      border-bottom-width: 1.5px;
+      color: fn.get-color("placeholder");
+
+      @include mx.mq("lg", "min") {
+        padding: 16px 40px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        display: block;
+        width: 100%;
+        height: 1px;
+
+        background-color: fn.get-color(placeholder);
+      }
+    }
+  }
+
+  tbody {
+    @extend %details;
+
+    td {
+      position: relative;
+      padding: 16px 50px;
+      vertical-align: middle;
+      border-bottom-width: 1px;
+
+      @include mx.mq("md", "min") {
+        padding: 10px;
+      }
+
+      @include mx.mq("lg", "min") {
+        padding: 16px 40px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        display: block;
+        width: 100%;
+        height: 1px;
+
+        background-color: fn.get-color(line);
+      }
+
+      &:first-child::after {
+        width: 95%;
+        left: 15%;
+      }
+
+      &:last-child::after {
+        width: 72%;
+      }
+    }
+  }
+}
+
+@include mx.mq("md", "max") {
+  .customers-table,
+  .customers-table thead,
+  .customers-table tbody,
+  .customers-table th,
+  .customers-table td,
+  .customers-table tr {
+    display: block;
+  }
+
+  .customers-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .customers-table tr {
+    margin: 0 0 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px fn.get-color(box-shadow);
+  }
+
+  .customers-table td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+  }
+
+  .customers-table td:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-label);
+    font-weight: bold;
+  }
+}
+
+.customers-status {
+  max-width: 80px;
+  height: 29px;
+  padding: 4px 18px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: fn.get-color(not-active-secondary);
+  background-color: fn.get-color(not-active);
+  border: 1px solid fn.get-color(not-active-secondary);
+
+  &.active {
+    color: fn.get-color(accent-secondary);
+    background-color: fn.get-color(active);
+    border: 1px solid fn.get-color(accent-secondary);
+  }
+}
+
+.customers-bottom-text {
+  @extend %main-text;
+}
+
+.customers-footer {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+
+  @include mx.mq("md") {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  padding: 32px 40px 40px 38px;
+}

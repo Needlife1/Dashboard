@@ -1,0 +1,45 @@
+$breakpoints: (
+  "sm": 375px,
+  "md": 768px,
+  "lg": 1200px,
+  "xl": 1440px,
+);
+
+$colors: (
+  "light": #ffffff,
+  "dark": #292d32,
+  "dark-secondary": #000000,
+  "light-secondary": #9197b3,
+  "light-tertiary": #fafbff,
+  "accent": #5932ea,
+  "active": rgba(22, 192, 152, 0.38),
+  "accent-secondary": #008767,
+  "not-active": #ffc5c5,
+  "not-active-secondary": #df0404,
+  "transparent": transparent,
+  "current": currentColor,
+  "logo-text": #838383,
+  "bg-search": #f9fbff,
+  "placeholder": #b5b7c0,
+  "line": #eee,
+  "accent-text": #16c098,
+  "hover": #e7e7e7,
+  "bg-pagination": #f5f5f5,
+  "bg-pagination-active": #5932ea,
+  "box-shadow": rgba(0, 0, 0, 0.71),
+  "box-shadow-secondary": rgba(226, 236, 249, 0.5),
+  "user-text": #757575,
+);
+
+$main-font: "Poppins";
+
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+);
+
+$easings: (
+  "fast": 300ms ease,
+  "slow": 600ms ease,
+);
