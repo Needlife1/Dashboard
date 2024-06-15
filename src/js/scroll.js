@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const paginationBox = document.querySelector('.pagination-box');
-  const header = document.querySelector('header');
+  const title = document.querySelector('.customers-title');
 
   let counter = 1;
 
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       counter = Number(activeBtn.textContent);
 
-      header.scrollIntoView({ behavior: 'smooth' });
+      title.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });

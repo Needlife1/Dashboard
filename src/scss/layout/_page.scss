@@ -3,7 +3,7 @@
 @use "../utilities/placeholders";
 
 .page {
-  min-width: 375px;
+  min-width: 320px;
 
   @include mx.mq("lg") {
     display: grid;
