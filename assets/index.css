@@ -200,7 +200,7 @@ button {
 }
 
 .page {
-  min-width: 375px;
+  min-width: 320px;
 }
 
 .page-title {
@@ -313,7 +313,7 @@ button {
 }
 .customers-table thead th {
   position: relative;
-  padding: 10px;
+  padding: 6px;
   border-bottom-width: 1.5px;
   color: #b5b7c0;
 }
